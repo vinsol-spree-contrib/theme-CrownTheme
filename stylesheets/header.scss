@@ -103,8 +103,12 @@ body{
 #link-to-login{
   display: none;
 }
-
-.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login{
+.nav.navbar-right-list li:nth-child(1), .nav.navbar-right-list li:nth-child(2){
+  display:none;
+}
+.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login,
+.nav.navbar-right-list .dropdown-menu li:nth-child(n),
+#slide-nav-wrap li:nth-child(n){
   display:block;
 }
 
@@ -200,9 +204,10 @@ body{
     min-width:350px;
     @include border-radius(0px);
     @media screen and (max-width:767px){
-      min-width:300px;
+      min-width:233px;
       right:0;
-      left:-150px;
+      left:-50px;
+      padding:10px;
     }
   }
   .inline-input{
@@ -233,7 +238,7 @@ body{
   position: fixed;
   top:0;
   left:0;
-  width: 100%; 
+  width: 100%;
   z-index: 99;
   background-color: $wh-color;
   @include transition(all 0.4s);
@@ -278,6 +283,9 @@ body{
         background-color:$secondary-color !important;
         text-decoration:none;
       }
+    }
+    ul{
+      overflow: hidden;
     }
   }
 }
@@ -336,13 +344,13 @@ input[type="checkbox"].menu{
       .fa-bars{
         display:none;
       }
-    } 
+    }
   }
 }
 .sticky-helper{
   display:none;
   height:55px;
-  
+
 }
 
 @media screen and (max-width:767px){
@@ -401,6 +409,9 @@ input[type="checkbox"].menu{
 }
 body.nav-active{
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 .nav-overlay{
   position: fixed;
@@ -414,6 +425,7 @@ body.nav-active{
   display: none;
   &.active{
     display: block;
+    z-index: 4;
   }
 }
 @media screen and (min-width:769px){

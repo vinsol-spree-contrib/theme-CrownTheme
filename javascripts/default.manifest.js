@@ -1,4 +1,6 @@
 // all javascript files related to themes should be require in this manifest.
+
+//= require 'owl.carousel.min'
 jQuery(document).on('click', '.mega-dropdown', function(e) {
   e.stopPropagation()
 })
