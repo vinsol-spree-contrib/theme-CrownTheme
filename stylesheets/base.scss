@@ -34,8 +34,8 @@
   [type="checkbox"]:checked + label:after {
     content: '✔';
     position: absolute;
-    top: .1em; left: .3em;
-    font-size: 1.3em;
+    top: .1em; left: .2em;
+    font-size: 1.1em;
     line-height: 0.8;
     color: $primary-color;
     transition: all .2s;
@@ -48,12 +48,14 @@
     opacity: 1;
     transform: scale(1);
   }
-  [type="checkbox"]:checked:focus + label:before,
-  [type="checkbox"]:not(:checked):focus + label:before {
+  [type="checkbox"]:checked:focus + label:before
+  {
     border: 2px solid $primary-color;
   }
-  label:hover:before {
-    border: 2px solid $primary-color!important;
+  @media screen and (min-width:768px){
+    label:hover:before {
+      border: 2px solid $primary-color!important;
+    }
   }
   label{
     font-weight: normal;
@@ -333,13 +335,10 @@
   .footer-ul{
     list-style: none;
     padding:0px;
-    margin:0px;
+    margin:0px 0 15px 0;
     li{
       display: inline-block;
-      width:49%;
-      @media screen and (max-width: 767px){
-        width:100%  ;
-      }
+      
       a{
         color:$wh-color;
         display:block;
@@ -351,12 +350,10 @@
       }
     }
   }
-  .newsletter-box{
-    background-color: $gray-color;
-    border-color:$gray-color;
-    margin-top:20px;
-    h3{
-        margin-top:0px;
+  .footerleft{
+    p{
+      display: inline-block;
+      margin-right: 15px;
     }
   }
 }
@@ -781,5 +778,28 @@ label{
   .login-page{
     margin-top:0px;
     margin-bottom:0px;
+  }
+}
+.sv_checkbox{
+  padding-top:5px;
+}
+.order-number a{
+  color:$secondary-color;
+}
+@media screen and (max-width:767px){
+  #checkout [type="checkbox"]:checked + label:after, 
+  .list-group [type="checkbox"]:checked + label:after, 
+  .login-page [type="checkbox"]:checked + label:after{
+    font-size: 0.7em;
+    top:5px;
+  }
+  .progress-steps > li {
+    float: left;
+  }
+  .progress-steps > li + li{
+    margin-left: -2px;
+  }
+  .progress-steps > li > a {
+    font-size: 14px;
   }
 }

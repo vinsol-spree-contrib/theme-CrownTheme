@@ -1,4 +1,6 @@
 // all javascript files related to themes should be require in this manifest.
+
+//= require 'owl.carousel.min'
 jQuery(document).on('click', '.mega-dropdown', function(e) {
   e.stopPropagation()
 })
@@ -16,6 +18,17 @@ $( document ).ready(function() {
     itemsMobile: [767,1]
   });
 
+  $(".navbar-nav  .fa-bars").click(function(){
+    $("body").addClass( "nav-active");
+    $(".nav-overlay").addClass('active');
+  })
+  
+  $(".navbar-nav  .fa-times").click(function(){
+    $("body").removeClass( "nav-active");
+    $(".nav-overlay").removeClass('active');
+  })
+  
+  
 });
 
 
@@ -29,8 +42,8 @@ $(window).scroll(function(){
 });
 
 $(document).ready(function(){
-	//var slider_h = $(window).height();
-	//$('#sg-carousel').css('height', slider_h +"px");
+  //var slider_h = $(window).height();
+  //$('#sg-carousel').css('height', slider_h +"px");
 });
 /*----footer fixed on bottom when page is not full----*/
 function autoHeight() {
@@ -51,3 +64,6 @@ function autoHeight() {
  $(window).resize(function() {
    autoHeight();
  });
+
+
+ 
